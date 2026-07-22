@@ -124,6 +124,31 @@ patterns — including deriving it from a BIP-39 mnemonic (your NDK keys are aut
 domain-separated from any BIP-32 wallet from the same mnemonic). Prefer a **dedicated**
 secret for high-value contexts.
 
+## Transforms: seed → key (optional `/profiles`)
+
+The core stops at a 32-byte seed. To turn it into an actual key, import the **optional**
+profiles module, which implements the [NDK Profiles](https://github.com/Patternity/ndk/blob/master/SPEC-PROFILES.md)
+transforms and is byte-for-byte conformant with their vectors:
+
+```ts
+import { secp256k1Raw, bip32Seed, ed25519Seed, hkdfSha256 } from "@lexxxell/named-deterministic-keys/profiles";
+
+const seed = deriveSeed(master, descriptor);           // 32 bytes (core, dep-free)
+const priv = secp256k1Raw(seed);                       // secp256k1 private key (Ethereum, ...)
+const node = bip32Seed(seed).derive("m/44'/5'/0'/0/0"); // BIP-32 HD key (Dash, Bitcoin, ...)
+const { publicKey } = ed25519Seed(seed);               // Ed25519 (Solana, SSH, Minisign)
+const key32 = hkdfSha256(seed);                        // symmetric key (HKDF-SHA256)
+```
+
+This module needs audited peer dependencies (`@noble/curves`, `@noble/hashes`,
+`@scure/bip32`) — declared **optional**, so the core package stays dependency-free. Those
+libraries require **Node ≥ 20.19**; the dependency-free core still runs on Node ≥ 18.
+Install them only if you use `/profiles`:
+
+```sh
+npm install @noble/curves @noble/hashes @scure/bip32
+```
+
 ## Examples: one root → any key
 
 The 32-byte NDK seed is universal: via the `type` transform it becomes a key for any

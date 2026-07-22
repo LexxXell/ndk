@@ -1,0 +1,48 @@
+{
+  "spec": "ndk-profiles-1",
+  "note": "Transform outputs for the NDK core baseline descriptor with type varied. See SPEC-PROFILES.md.",
+  "masterSecretHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+  "baseDescriptor": {
+    "ndk": 1,
+    "subject": "github:Patternity/ndk",
+    "purpose": "donations",
+    "profile": "dash:mainnet"
+  },
+  "transforms": [
+    {
+      "type": "secp256k1-raw",
+      "ndkSeedHex": "4b456b3c3b81f371b414d98c4b8b039bc84522856c37b14395fbae9150f43640",
+      "output": {
+        "privateKeyHex": "4b456b3c3b81f371b414d98c4b8b039bc84522856c37b14395fbae9150f43640"
+      }
+    },
+    {
+      "type": "bip32-seed",
+      "ndkSeedHex": "1f39b1280a22d78b72f3b670768fdcd586d21d1a09315147b490845f231ff239",
+      "output": {
+        "masterPrivateKeyHex": "926a8ecf73693a8b0a7860a81cb3e709da80bc18b6be8f34628f7da403c59e2a",
+        "chainCodeHex": "748a72e6097185070634c59dba05968299c31c489474fc481eaa130f51e12b85"
+      }
+    },
+    {
+      "type": "ed25519-seed",
+      "ndkSeedHex": "0b3cdd91f5f8852c2ff06a14b1fc6323f201f38ad0ecce9f80f35ebbf16deee0",
+      "output": {
+        "privateSeedHex": "0b3cdd91f5f8852c2ff06a14b1fc6323f201f38ad0ecce9f80f35ebbf16deee0",
+        "publicKeyHex": "6a85b4c08969c2fa6988df63ebfd257eb1cd732f3f3811cdb500acc63510b717"
+      }
+    },
+    {
+      "type": "hkdf-sha256",
+      "ndkSeedHex": "5ce6c26cac0585bc415f0e962e8df0a09a93c492801641d506910667b4b1ece5",
+      "output": {
+        "params": {
+          "salt": "",
+          "info": "",
+          "L": 32
+        },
+        "okmHex": "490b59e6dde3f0cce7bda5bf930b9bc71563ded92b5af0c83517d0093f0f1eb3"
+      }
+    }
+  ]
+}
