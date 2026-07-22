@@ -1,0 +1,49 @@
+{
+  "name": "@lexxxell/named-deterministic-keys",
+  "version": "0.1.0-alpha.1",
+  "description": "Reference implementation of NDK-1: deterministic 32-byte seed derivation from a named descriptor via SLIP-0021.",
+  "type": "module",
+  "license": "MIT",
+  "author": "LexxXell",
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "ndk": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/",
+    "vectors": "npm run build && node scripts/gen-vectors.mjs",
+    "prepack": "npm run build"
+  },
+  "keywords": [
+    "ndk",
+    "slip-0021",
+    "deterministic",
+    "key-derivation",
+    "seed"
+  ],
+  "devDependencies": {
+    "@noble/curves": "^2.2.0",
+    "@noble/hashes": "^2.2.0",
+    "@scure/base": "^2.2.0",
+    "@scure/bip32": "^2.2.0",
+    "@scure/bip39": "^2.2.0",
+    "@types/node": "^26.1.1",
+    "typescript": "^5.4.0"
+  }
+}

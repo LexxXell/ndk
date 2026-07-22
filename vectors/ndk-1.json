@@ -1,0 +1,309 @@
+{
+  "spec": "ndk-1",
+  "slip0021": {
+    "note": "NDK uses SLIP-0021 unmodified; these official vectors must also pass.",
+    "masterSeedHex": "c76c4ac4f4e4a00d6b274d5c39c700bb4a7ddc04fbc6f78e85ca75007b5b495f74a9043eeb77bdd53aa6fc3a0e31462270316fa04b8c19114c8798706cd02ac8",
+    "keys": {
+      "m": "dbf12b44133eaab506a740f6565cc117228cbf1dd70635cfa8ddfdc9af734756",
+      "m/\"SLIP-0021\"": "1d065e3ac1bbe5c7fad32cf2305f7d709dc070d672044a19e610c77cdf33de0d",
+      "m/\"SLIP-0021\"/\"Master encryption key\"": "ea163130e35bbafdf5ddee97a17b39cef2be4b4f390180d65b54cf05c6a82fde",
+      "m/\"SLIP-0021\"/\"Authentication key\"": "47194e938ab24cc82bfa25f6486ed54bebe79c40ae2a5a32ea6db294d81861a6"
+    }
+  },
+  "vectors": [
+    {
+      "name": "dash donations (bip32-seed)",
+      "masterSecretHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "descriptor": {
+        "ndk": 1,
+        "subject": "github:Patternity/ndk",
+        "purpose": "donations",
+        "profile": "dash:mainnet",
+        "type": "bip32-seed"
+      },
+      "labels": [
+        "ndk:1",
+        "subject:github:Patternity/ndk",
+        "purpose:donations",
+        "profile:dash:mainnet",
+        "type:bip32-seed"
+      ],
+      "intermediateNodeKeysHex": [
+        {
+          "label": "ndk:1",
+          "keyHex": "68080b702af23776ee8af36925c13eb01df433ebb555315de569863bae7460b7"
+        },
+        {
+          "label": "subject:github:Patternity/ndk",
+          "keyHex": "b222b519b328cfd1bf5185cefe29e266e1eead8f7b102c03d286488ee4f13b71"
+        },
+        {
+          "label": "purpose:donations",
+          "keyHex": "a747b4e249a3628e1ddc4fa88d6a48646ad8afe1e098fa8afc2f1d57700efac3"
+        },
+        {
+          "label": "profile:dash:mainnet",
+          "keyHex": "1df6258391a2418154c39984fdd1c8207fdc2b0877503c21511e1f8a5b9574c9"
+        },
+        {
+          "label": "type:bip32-seed",
+          "keyHex": "1f39b1280a22d78b72f3b670768fdcd586d21d1a09315147b490845f231ff239"
+        }
+      ],
+      "fingerprint": "b325d4082fef34c5",
+      "seedHex": "1f39b1280a22d78b72f3b670768fdcd586d21d1a09315147b490845f231ff239"
+    },
+    {
+      "name": "dash donations (secp256k1-raw)",
+      "masterSecretHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "descriptor": {
+        "ndk": 1,
+        "subject": "github:Patternity/ndk",
+        "purpose": "donations",
+        "profile": "dash:mainnet",
+        "type": "secp256k1-raw"
+      },
+      "labels": [
+        "ndk:1",
+        "subject:github:Patternity/ndk",
+        "purpose:donations",
+        "profile:dash:mainnet",
+        "type:secp256k1-raw"
+      ],
+      "intermediateNodeKeysHex": [
+        {
+          "label": "ndk:1",
+          "keyHex": "68080b702af23776ee8af36925c13eb01df433ebb555315de569863bae7460b7"
+        },
+        {
+          "label": "subject:github:Patternity/ndk",
+          "keyHex": "b222b519b328cfd1bf5185cefe29e266e1eead8f7b102c03d286488ee4f13b71"
+        },
+        {
+          "label": "purpose:donations",
+          "keyHex": "a747b4e249a3628e1ddc4fa88d6a48646ad8afe1e098fa8afc2f1d57700efac3"
+        },
+        {
+          "label": "profile:dash:mainnet",
+          "keyHex": "1df6258391a2418154c39984fdd1c8207fdc2b0877503c21511e1f8a5b9574c9"
+        },
+        {
+          "label": "type:secp256k1-raw",
+          "keyHex": "4b456b3c3b81f371b414d98c4b8b039bc84522856c37b14395fbae9150f43640"
+        }
+      ],
+      "fingerprint": "f106d193e5c64665",
+      "seedHex": "4b456b3c3b81f371b414d98c4b8b039bc84522856c37b14395fbae9150f43640"
+    },
+    {
+      "name": "dash testnet",
+      "masterSecretHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "descriptor": {
+        "ndk": 1,
+        "subject": "github:Patternity/ndk",
+        "purpose": "donations",
+        "profile": "dash:testnet",
+        "type": "bip32-seed"
+      },
+      "labels": [
+        "ndk:1",
+        "subject:github:Patternity/ndk",
+        "purpose:donations",
+        "profile:dash:testnet",
+        "type:bip32-seed"
+      ],
+      "intermediateNodeKeysHex": [
+        {
+          "label": "ndk:1",
+          "keyHex": "68080b702af23776ee8af36925c13eb01df433ebb555315de569863bae7460b7"
+        },
+        {
+          "label": "subject:github:Patternity/ndk",
+          "keyHex": "b222b519b328cfd1bf5185cefe29e266e1eead8f7b102c03d286488ee4f13b71"
+        },
+        {
+          "label": "purpose:donations",
+          "keyHex": "a747b4e249a3628e1ddc4fa88d6a48646ad8afe1e098fa8afc2f1d57700efac3"
+        },
+        {
+          "label": "profile:dash:testnet",
+          "keyHex": "7014c843f1558b3ad3ce8f448c75d342158911ad0173bd4bb193ee9fb26df298"
+        },
+        {
+          "label": "type:bip32-seed",
+          "keyHex": "f778e090bdec70182875533fb6b39eb1ac0d5e4283c5eb938ae2b39e69c70d9e"
+        }
+      ],
+      "fingerprint": "4ab0f03257cfd9e9",
+      "seedHex": "f778e090bdec70182875533fb6b39eb1ac0d5e4283c5eb938ae2b39e69c70d9e"
+    },
+    {
+      "name": "dash donations generation 2",
+      "masterSecretHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "descriptor": {
+        "ndk": 1,
+        "subject": "github:Patternity/ndk",
+        "purpose": "donations",
+        "profile": "dash:mainnet:2",
+        "type": "bip32-seed"
+      },
+      "labels": [
+        "ndk:1",
+        "subject:github:Patternity/ndk",
+        "purpose:donations",
+        "profile:dash:mainnet:2",
+        "type:bip32-seed"
+      ],
+      "intermediateNodeKeysHex": [
+        {
+          "label": "ndk:1",
+          "keyHex": "68080b702af23776ee8af36925c13eb01df433ebb555315de569863bae7460b7"
+        },
+        {
+          "label": "subject:github:Patternity/ndk",
+          "keyHex": "b222b519b328cfd1bf5185cefe29e266e1eead8f7b102c03d286488ee4f13b71"
+        },
+        {
+          "label": "purpose:donations",
+          "keyHex": "a747b4e249a3628e1ddc4fa88d6a48646ad8afe1e098fa8afc2f1d57700efac3"
+        },
+        {
+          "label": "profile:dash:mainnet:2",
+          "keyHex": "cb78667cd7701c724d738d8106a6d5e8548c822b66a97324e439719a16cb6aee"
+        },
+        {
+          "label": "type:bip32-seed",
+          "keyHex": "173d70d3839839a1416d17d7707b7211a33c7c7d8abf6ca0c86047cd30152863"
+        }
+      ],
+      "fingerprint": "b661fce87b425734",
+      "seedHex": "173d70d3839839a1416d17d7707b7211a33c7c7d8abf6ca0c86047cd30152863"
+    },
+    {
+      "name": "release signing (ed25519)",
+      "masterSecretHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "descriptor": {
+        "ndk": 1,
+        "subject": "github:Patternity/ndk",
+        "purpose": "release-signing",
+        "profile": "minisign",
+        "type": "ed25519-seed"
+      },
+      "labels": [
+        "ndk:1",
+        "subject:github:Patternity/ndk",
+        "purpose:release-signing",
+        "profile:minisign",
+        "type:ed25519-seed"
+      ],
+      "intermediateNodeKeysHex": [
+        {
+          "label": "ndk:1",
+          "keyHex": "68080b702af23776ee8af36925c13eb01df433ebb555315de569863bae7460b7"
+        },
+        {
+          "label": "subject:github:Patternity/ndk",
+          "keyHex": "b222b519b328cfd1bf5185cefe29e266e1eead8f7b102c03d286488ee4f13b71"
+        },
+        {
+          "label": "purpose:release-signing",
+          "keyHex": "bacb894385de20359c8aabc968498c135dc89a1ac991b7c932308f389ce98b37"
+        },
+        {
+          "label": "profile:minisign",
+          "keyHex": "96baa47e99cdc74e7876442d5ab048270b2e16f7d3e8eaefb7564950c19cc059"
+        },
+        {
+          "label": "type:ed25519-seed",
+          "keyHex": "2f624e08dea65dee413c97795e999411d0dce488aaeab0235793904324a3b62b"
+        }
+      ],
+      "fingerprint": "528ddb2888ce364b",
+      "seedHex": "2f624e08dea65dee413c97795e999411d0dce488aaeab0235793904324a3b62b"
+    },
+    {
+      "name": "ssh authentication",
+      "masterSecretHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "descriptor": {
+        "ndk": 1,
+        "subject": "user:alice@example.org",
+        "purpose": "authentication",
+        "profile": "ssh:ed25519",
+        "type": "ed25519-seed"
+      },
+      "labels": [
+        "ndk:1",
+        "subject:user:alice@example.org",
+        "purpose:authentication",
+        "profile:ssh:ed25519",
+        "type:ed25519-seed"
+      ],
+      "intermediateNodeKeysHex": [
+        {
+          "label": "ndk:1",
+          "keyHex": "68080b702af23776ee8af36925c13eb01df433ebb555315de569863bae7460b7"
+        },
+        {
+          "label": "subject:user:alice@example.org",
+          "keyHex": "b5c04f9a2c1798ff734dcd3ae18026486e01f452c150124efd419babaf35f817"
+        },
+        {
+          "label": "purpose:authentication",
+          "keyHex": "e7c9fa2422748945624da4d54205de2a975119f88fc5a3cbefb1a15a5e999de9"
+        },
+        {
+          "label": "profile:ssh:ed25519",
+          "keyHex": "5e09685844c81eb6c88f48db4cab0f1440bcb29ea1152ba4b2cb1410143a257a"
+        },
+        {
+          "label": "type:ed25519-seed",
+          "keyHex": "98aa6ce190bf8511d1f2d6395a6744a408ea31788b5c4a9df247c10b5a7c9958"
+        }
+      ],
+      "fingerprint": "22bd3d1bbc598354",
+      "seedHex": "98aa6ce190bf8511d1f2d6395a6744a408ea31788b5c4a9df247c10b5a7c9958"
+    },
+    {
+      "name": "vault symmetric key (hkdf)",
+      "masterSecretHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "descriptor": {
+        "ndk": 1,
+        "subject": "domain:example.org",
+        "purpose": "encryption",
+        "profile": "application:vault:v1",
+        "type": "hkdf-sha256"
+      },
+      "labels": [
+        "ndk:1",
+        "subject:domain:example.org",
+        "purpose:encryption",
+        "profile:application:vault:v1",
+        "type:hkdf-sha256"
+      ],
+      "intermediateNodeKeysHex": [
+        {
+          "label": "ndk:1",
+          "keyHex": "68080b702af23776ee8af36925c13eb01df433ebb555315de569863bae7460b7"
+        },
+        {
+          "label": "subject:domain:example.org",
+          "keyHex": "c6dd60b2c96d722e85fb9e0841281f7989608d504400b2d9f5ac62d659a52ae9"
+        },
+        {
+          "label": "purpose:encryption",
+          "keyHex": "899dd0ef7022afef20084043316a8539971c1800d56eff620a898d40bcb4a19b"
+        },
+        {
+          "label": "profile:application:vault:v1",
+          "keyHex": "5452c772b4a4dbd9fe5648212eed7d4a6d69f9cad671b08b568869d8d6883dad"
+        },
+        {
+          "label": "type:hkdf-sha256",
+          "keyHex": "4a816d4bc3900a2c0ccaedf7d57920abff6b436b4fc3b50bb2dc08480a73430e"
+        }
+      ],
+      "fingerprint": "a2cf43dc1f3444b7",
+      "seedHex": "4a816d4bc3900a2c0ccaedf7d57920abff6b436b4fc3b50bb2dc08480a73430e"
+    }
+  ]
+}
