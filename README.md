@@ -65,7 +65,9 @@ not itself a private key**.
 npm install @lexxxell/named-deterministic-keys
 ```
 
-ESM, Node.js ≥ 18. Zero runtime dependencies (Node's built-in `crypto` only).
+ESM, isomorphic (Node.js ≥ 20.19 and browsers). One small audited runtime dependency:
+[`@noble/hashes`](https://github.com/paulmillr/noble-hashes) (HMAC-SHA512 / SHA-256). The
+core uses no `node:crypto` and no `Buffer`, so it runs unchanged in the browser.
 
 ## Library API
 
@@ -140,10 +142,9 @@ const { publicKey } = ed25519Seed(seed);               // Ed25519 (Solana, SSH, 
 const key32 = hkdfSha256(seed);                        // symmetric key (HKDF-SHA256)
 ```
 
-This module needs audited peer dependencies (`@noble/curves`, `@noble/hashes`,
-`@scure/bip32`) — declared **optional**, so the core package stays dependency-free. Those
-libraries require **Node ≥ 20.19**; the dependency-free core still runs on Node ≥ 18.
-Install them only if you use `/profiles`:
+This module needs two more audited peer dependencies (`@noble/curves`, `@scure/bip32`) —
+declared **optional**, so the base install stays minimal (`@noble/hashes` is already the
+core's dependency). Install them only if you use `/profiles`:
 
 ```sh
 npm install @noble/curves @noble/hashes @scure/bip32
@@ -162,8 +163,8 @@ npm run build && node examples/universal-demo.mjs
 
 The intended architecture uses a **Dash Platform identity** as the master-secret source and
 its **documents** as the public descriptor registry — one identity, every key you own,
-everywhere. See [`examples/README.md`](examples/README.md). The example libraries
-(`@noble/*`, `@scure/*`) are `devDependencies`; the core package stays dependency-free.
+everywhere. See [`examples/README.md`](examples/README.md). The extra example libraries
+(`@noble/curves`, `@scure/*`) are `devDependencies`; the core ships only `@noble/hashes`.
 
 ## Development
 
@@ -174,8 +175,8 @@ npm test           # build + node --test
 npm run vectors    # regenerate vectors/ndk-1.json from this implementation
 ```
 
-Tests cover the official SLIP-0021 vectors, all NDK vectors and intermediate node keys, a
-dependency-free second implementation of the core, domain separation per field, descriptor
+Tests cover the official SLIP-0021 vectors, all NDK vectors and intermediate node keys, an
+independent `node:crypto` second implementation of the core, domain separation per field, descriptor
 validation, strict JSON parsing, and the CLI.
 
 ## License
