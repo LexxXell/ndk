@@ -39,8 +39,10 @@ function hasEdgeWhitespace(value: string): boolean {
   return value.length !== value.trim().length;
 }
 
+const utf8Encoder = new TextEncoder();
+
 function utf8ByteLength(value: string): number {
-  return Buffer.byteLength(value, "utf8");
+  return utf8Encoder.encode(value).length;
 }
 
 function validateSubject(value: unknown, errors: ValidationError[]): void {

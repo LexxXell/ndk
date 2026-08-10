@@ -1,6 +1,14 @@
-import { createHash } from "node:crypto";
+import { sha256 } from "@noble/hashes/sha2.js";
 import type { NdkDescriptor } from "./types.js";
 import { compileLabels } from "./compile.js";
+
+function toHex(bytes: Uint8Array): string {
+  let out = "";
+  for (const b of bytes) {
+    out += b.toString(16).padStart(2, "0");
+  }
+  return out;
+}
 
 /**
  * Compute a non-secret descriptor fingerprint.
@@ -15,6 +23,6 @@ import { compileLabels } from "./compile.js";
  */
 export function descriptorFingerprint(descriptor: NdkDescriptor): string {
   const labels = compileLabels(descriptor);
-  const digest = createHash("sha256").update(labels.join("\n"), "utf8").digest();
-  return digest.subarray(0, 8).toString("hex");
+  const digest = sha256(new TextEncoder().encode(labels.join("\n")));
+  return toHex(digest.subarray(0, 8));
 }

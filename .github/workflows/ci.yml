@@ -31,22 +31,6 @@ jobs:
           npm run vectors
           git diff --exit-code -- vectors/
 
-  core-node18:
-    # The core is dependency-free and supports Node 18; the optional /profiles module
-    # needs Node >= 20.19 (its @noble/* peer deps). Run the core tests only on Node 18.
-    name: core on node 18
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: npm
-      - run: npm ci
-      - run: npm run build
-      - name: core tests (no profiles)
-        run: node --test test/validate.test.mjs test/parse.test.mjs test/vectors.test.mjs test/cli.test.mjs
-
   example:
     name: universal-output example
     runs-on: ubuntu-latest
@@ -63,7 +47,7 @@ jobs:
 
   all-green:
     name: all-green
-    needs: [test, core-node18, example]
+    needs: [test, example]
     runs-on: ubuntu-latest
     steps:
       - run: echo "all required jobs passed"
